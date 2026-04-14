@@ -42,7 +42,7 @@ curl -fsSL https://openclaw.ai/install.sh | bash -s -- --version 2026.3.24 --no-
 ### 2. Run setup
 
 ```bash
-git clone <this-repo> && cd tanya
+git clone https://github.com/opxiahub/tanya.git && cd tanya
 chmod +x setup
 ./setup
 ```
@@ -94,7 +94,7 @@ Tanya runs on three layers:
 
 - **Conversation**: When you message her on Telegram, she reads her personality files, checks her current mood and state, and responds in character.
 
-- **Heartbeat**: Every 10 minutes, she checks if there's something she wants to say. Maybe she has a topic on her mind, or she wants to share a photo. Most heartbeats are silent.
+- **Heartbeat**: Every 60 minutes, she checks if there's something she wants to say. Maybe she has a topic on her mind, or she wants to share a photo. Most heartbeats are silent.
 
 - **Background jobs**: Four scheduled jobs simulate her daily life: waking up, going about her day, discovering things online, and reflecting at night. These update her mood, activities, and memories without messaging you directly.
 
