@@ -28,7 +28,8 @@
         "primary": "google/gemini-3.1-flash-image-preview"
       },
       "models": {
-        "openai/gpt-5.4": {}
+        "openai/gpt-5.4": {},
+        "openai/gpt-5.4-mini": {}
       },
       "workspace": "/root/.openclaw/workspace",
       "contextPruning": {
@@ -45,7 +46,8 @@
       },
       "typingMode": "never",
       "heartbeat": {
-        "every": "10m",
+        "model": "openai/gpt-5.4-mini",
+        "every": "60m",
         "target": "last"
       }
     }
