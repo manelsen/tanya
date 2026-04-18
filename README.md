@@ -46,7 +46,7 @@ chmod +x setup
 ```
 
 - State lives in `./tanya-data/` (bind-mounted into the container)
-- Config in `./.env` — re-run `./setup docker` any time to change features or keys
+- Config in `./.env`
 
 **2. Update features later:**
 
@@ -66,7 +66,7 @@ Requirements: Docker Engine (or Desktop) with the `docker compose` plugin. That'
 
 ### Option B — Host install (bare-metal Linux VPS)
 
-Installs OpenClaw directly on the machine. Useful on a small VPS where you'd rather skip the Docker runtime overhead, or when you want the `openclaw` CLI on your shell path for day-to-day ops (status, logs, pairing) without a `docker compose exec` prefix.
+Installs OpenClaw directly on the machine. Useful on a small VPS where you'd rather skip the Docker runtime overhead, or when you want the `openclaw` CLI on your shell path for day-to-day ops (status, logs, pairing).
 
 **1. Install OpenClaw** (pinned to `2026.3.24`):
 
