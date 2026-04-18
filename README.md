@@ -33,9 +33,11 @@ Tanya wakes up in the morning, goes about her day, gets excited about things, ge
 
 Two ways to run Tanya. Pick one.
 
-### Option A — Docker (recommended)
+### Option A — Docker
 
-Runs everything (OpenClaw + Tanya) inside a single container. Nothing touches the host except Docker itself. Works on any Linux VPS, a Mac with Docker Desktop, or a home server.
+Runs everything (OpenClaw + Tanya) inside an isolated sandbox environment. Nothing touches the host except Docker itself. Works on any Linux VPS, a Mac with Docker Desktop, or a home server.
+
+**1. Clone and run:**
 
 ```bash
 git clone https://github.com/opxiahub/tanya.git && cd tanya
@@ -43,20 +45,22 @@ chmod +x setup
 ./setup docker
 ```
 
-The wizard prompts for the same things as the host install, writes a `.env` file, builds the image, starts the container, and walks you through Telegram pairing.
+- State lives in `./tanya-data/` (bind-mounted into the container)
+- Config in `./.env` — re-run `./setup docker` any time to change features or keys
 
-State lives in `./tanya-data/` (bind-mounted into the container) and config in `./.env`. Re-run `./setup docker` any time to change features or keys.
-
-Common commands:
+**2. Update features later:**
 
 ```bash
-docker compose logs -f tanya            # follow logs
-docker compose exec tanya openclaw status
-docker compose restart tanya            # apply .env changes
-docker compose down                     # stop
-docker compose down -v                  # stop and wipe state
-./setup docker uninstall                # stop + guided cleanup (image, tanya-data, .env)
+./setup docker
 ```
+
+**3. Uninstall:**
+
+```bash
+./setup docker uninstall
+```
+
+Stops the container and guides you through removing the image, state, and keys.
 
 Requirements: Docker Engine (or Desktop) with the `docker compose` plugin. That's it.
 

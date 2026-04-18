@@ -118,13 +118,21 @@ key_help() {
 usage() {
   cat <<EOF
 
-  ${BOLD}Usage:${RESET}
-    ./setup              First-time install (host machine)
-    ./setup init         Same as above
-    ./setup configure    Update features on an existing install
-    ./setup docker             Install and run Tanya inside a Docker container
-    ./setup docker uninstall   Stop the container and optionally clean up image/volumes/data
-    ./setup uninstall          Remove Tanya and OpenClaw completely
+  ${BOLD}Tanya Setup — Available Commands${RESET}
+
+  ${BOLD}Host install (bare-metal)${RESET}
+    ${CYAN}./setup${RESET}                    First-time install on this machine
+    ${CYAN}./setup init${RESET}               Same as above
+    ${CYAN}./setup configure${RESET}          Update features or keys on an existing install
+    ${CYAN}./setup uninstall${RESET}          Remove Tanya and OpenClaw completely from this machine
+
+  ${BOLD}Docker${RESET}
+    ${CYAN}./setup docker${RESET}             Install and run Tanya inside a Docker container
+    ${CYAN}./setup docker uninstall${RESET}   Stop container and guided cleanup (image, data, keys)
+
+  ${BOLD}Help${RESET}
+    ${CYAN}./setup help${RESET}               Show this help menu
+    ${CYAN}./setup -h${RESET}                 Same as above
 
 EOF
 }
